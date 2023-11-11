@@ -85,7 +85,7 @@ export default function RootLayout({
                     width: "150px",
                   }}
                 >
-                  Sign Out
+                  Sign Out!
                 </Button>
               </Stack>
             </Stack>
