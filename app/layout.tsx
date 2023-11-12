@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Stack, Button } from "@mui/material";
-import Link from "next/link";
+import { Stack } from "@mui/material";
+import NavBar from "./components/NavBar";
 
 export const metadata: Metadata = {
   title: "+VNTR",
@@ -13,15 +13,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const buttons = [
-    { label: "Dashboard", href: "/dashboard" },
-    { label: "Trips", href: "/trips" },
-    { label: "Achievements", href: "/achievements" },
-    { label: "Friends", href: "/friends" },
-    { label: "Groups", href: "/groups" },
-    { label: "Chat", href: "/chat" },
-    { label: "Events", href: "/events" },
-  ];
   return (
     <>
       <CssBaseline />
@@ -47,48 +38,12 @@ export default function RootLayout({
           >
             <Stack
               direction="row"
-              justifyContent="center"
-              alignItems="center"
-              style={{ flex: 1 }} // Added flex: 1 to center the children Stack
+              style={{ flex: 1 }}
             >
               {children}
             </Stack>
-            <Stack
-              spacing={1}
-              alignItems="center"
-              style={{
-                backgroundColor: "#542F12",
-                width: "180px",
-                justifyContent: "space-between",
-              }}
-            >
-              <Stack spacing={1} style={{ paddingTop: "15px" }}>
-                {buttons.map((button) => (
-                  <Link href={button.href} passHref key={button.label}>
-                    <Button
-                      style={{
-                        backgroundColor: "#4E8448",
-                        color: "#000000",
-                        width: "150px",
-                      }}
-                    >
-                      {button.label}
-                    </Button>
-                  </Link>
-                ))}
-              </Stack>
-              <Stack style={{ paddingBottom: "15px" }}>
-                <Button
-                  style={{
-                    backgroundColor: "#4E8448",
-                    color: "#000000",
-                    width: "150px",
-                  }}
-                >
-                  Sign Out
-                </Button>
-              </Stack>
-            </Stack>
+            {/* the NavBar should only be rendered when a user is logged in */}
+            <NavBar />
           </Stack>
         </body>
       </html>

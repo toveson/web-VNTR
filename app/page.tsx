@@ -1,6 +1,5 @@
-// import Image from 'next/image';
-// import styles from './page.module.css';
+import { Stack } from "@mui/material";
 
 export default function Home() {
-  return <main>Hello world from the home page</main>;
+  return <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>Home Route</Stack>;
 }
