@@ -1,4 +1,9 @@
-const FriendsPage = () => {
-  return <div>friends page</div>;
-};
-export default FriendsPage;
+import { Stack } from "@mui/material";
+
+export default function Friends() {
+  return (
+    <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
+      Hello From Friends
+    </Stack>
+  );
+}
