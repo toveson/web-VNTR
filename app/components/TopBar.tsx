@@ -6,7 +6,7 @@ import { useNavBarContext } from "../Context/navBarContext";
 
 export default function TopBar() {
   const { currentPage, isHidden, setIsHidden } = useNavBarContext();
-  console.log(currentPage);
+
   return (
     <Stack
       spacing={2}
