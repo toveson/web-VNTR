@@ -15,10 +15,12 @@ import {
   VisibilityOff as HideIcon,
   ExitToApp as SignOutIcon,
 } from "@mui/icons-material";
+import { useNavBarContext } from "../Context/navBarContext";
 
 export default function NavBar() {
+  const { isHidden, setIsHidden, currentPage, setCurrentPage } =
+    useNavBarContext();
   const [isMini, setIsMini] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
 
   const topButtons = [
     { label: "Dashboard", href: "/dashboard", icon: <DashboardIcon /> },
@@ -68,8 +70,10 @@ export default function NavBar() {
               <Link href={button.href} passHref key={button.label}>
                 <Tooltip title={button.label} placement="left">
                   <IconButton
+                    onClick={() => setCurrentPage(button.label)}
                     style={{
-                      backgroundColor: "#4E8448",
+                      backgroundColor:
+                        currentPage === button.label ? "#73C7E7" : "#4E8448",
                       color: "#F8EBDE",
                     }}
                   >
@@ -112,8 +116,10 @@ export default function NavBar() {
             {topButtons.map((button) => (
               <Link href={button.href} passHref key={button.label}>
                 <Button
+                  onClick={() => setCurrentPage(button.label)}
                   style={{
-                    backgroundColor: "#4E8448",
+                    backgroundColor:
+                      currentPage === button.label ? "#73C7E7" : "#4E8448",
                     color: "#000000",
                     width: "150px",
                   }}
