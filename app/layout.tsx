@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Stack } from "@mui/material";
 import NavBar from "./components/NavBar";
+import TopBar from "./components/TopBar";
+import { NavBarContextProvider } from "./Context/navBarContext";
 
 export const metadata: Metadata = {
   title: "+VNTR",
@@ -26,25 +28,19 @@ export default function RootLayout({
             flexDirection: "column",
           }}
         >
-          <Stack
-            spacing={2}
-            style={{ backgroundColor: "#000000", height: "50px" }}
-          >
-            <Stack direction="row">Logo goes here</Stack>
-          </Stack>
-          <Stack
-            direction="row"
-            style={{ justifyContent: "space-between", flex: 1 }}
-          >
+          <NavBarContextProvider>
+            <TopBar />
             <Stack
               direction="row"
-              style={{ flex: 1 }}
+              style={{ justifyContent: "space-between", flex: 1 }}
             >
-              {children}
+              <Stack direction="row" style={{ flex: 1 }}>
+                {children}
+              </Stack>
+              {/* the NavBar should only be rendered when a user is logged in */}
+              <NavBar />
             </Stack>
-            {/* the NavBar should only be rendered when a user is logged in */}
-            <NavBar />
-          </Stack>
+          </NavBarContextProvider>
         </body>
       </html>
     </>
