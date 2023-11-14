@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Stack } from "@mui/material";
-import NavBar from "./components/NavBar";
+import SideNav from "./components/SideNav";
 import TopBar from "./components/TopBar";
 import { NavBarContextProvider } from "./Context/navBarContext";
 import { ReactNode } from "react";
@@ -34,8 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Stack direction="row" style={{ flex: 1 }}>
                 {children}
               </Stack>
-              {/* the NavBar should only be rendered when a user is logged in */}
-              <NavBar />
+              <SideNav />
             </Stack>
           </NavBarContextProvider>
         </body>
