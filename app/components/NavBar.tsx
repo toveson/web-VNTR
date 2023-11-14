@@ -120,7 +120,6 @@ export default function NavBar() {
                   style={{
                     backgroundColor:
                       currentPage === button.label ? "#73C7E7" : "#4E8448",
-                    color: "#000000",
                     width: "150px",
                   }}
                 >
@@ -138,7 +137,6 @@ export default function NavBar() {
                 onClick={button.onClick}
                 style={{
                   backgroundColor: "#4E8448",
-                  color: "#000000",
                   width: "150px",
                 }}
               >
