@@ -2,7 +2,8 @@
 
 import { Stack, Typography, IconButton, Tooltip, Button } from "@mui/material";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import {
   Dashboard as DashboardIcon,
   DirectionsCar as TripsIcon,
@@ -17,10 +18,19 @@ import {
 } from "@mui/icons-material";
 import { useNavBarContext } from "../Context/navBarContext";
 
-export default function NavBar() {
+export default function SideNav() {
   const { isHidden, setIsHidden, currentPage, setCurrentPage } =
     useNavBarContext();
+  const pathName = usePathname();
+  const modifiedPathName = pathName
+    .replace("/", "")
+    .replace(/^\w/, (c) => c.toUpperCase());
+
   const [isMini, setIsMini] = useState(false);
+
+  useEffect(() => {
+    setCurrentPage(modifiedPathName);
+  });
 
   const topButtons = [
     { label: "Dashboard", href: "/dashboard", icon: <DashboardIcon /> },
@@ -70,7 +80,6 @@ export default function NavBar() {
               <Link href={button.href} passHref key={button.label}>
                 <Tooltip title={button.label} placement="left">
                   <IconButton
-                    onClick={() => setCurrentPage(button.label)}
                     style={{
                       backgroundColor:
                         currentPage === button.label ? "#73C7E7" : "#4E8448",
@@ -116,7 +125,6 @@ export default function NavBar() {
             {topButtons.map((button) => (
               <Link href={button.href} passHref key={button.label}>
                 <Button
-                  onClick={() => setCurrentPage(button.label)}
                   style={{
                     backgroundColor:
                       currentPage === button.label ? "#73C7E7" : "#4E8448",
