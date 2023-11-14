@@ -4,17 +4,14 @@ import { Stack } from "@mui/material";
 import NavBar from "./components/NavBar";
 import TopBar from "./components/TopBar";
 import { NavBarContextProvider } from "./Context/navBarContext";
+import { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "+VNTR",
   description: "App to organize and plan your next solo or group adventure.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <CssBaseline />

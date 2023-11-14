@@ -4,6 +4,7 @@ import {
   Dispatch,
   FC,
   ReactNode,
+  SetStateAction,
   createContext,
   useContext,
   useState,
@@ -11,9 +12,9 @@ import {
 
 interface NavBarContextTypes {
   isHidden: boolean;
-  setIsHidden: Dispatch<React.SetStateAction<boolean>>;
+  setIsHidden: Dispatch<SetStateAction<boolean>>;
   currentPage: string;
-  setCurrentPage: Dispatch<React.SetStateAction<string>>;
+  setCurrentPage: Dispatch<SetStateAction<string>>;
 }
 
 interface NavBarContextProviderProps {
