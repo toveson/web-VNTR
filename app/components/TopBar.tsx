@@ -2,7 +2,7 @@
 
 import { IconButton, Stack, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useNavBarContext } from "../Context/navBarContext";
+import { useNavBarContext } from "../Context/NavBarContext";
 
 export default function TopBar() {
   const { currentPage, isHidden, setIsHidden } = useNavBarContext();
