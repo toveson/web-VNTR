@@ -24,7 +24,7 @@ interface NavBarContextProviderProps {
 const NavBarContext = createContext<NavBarContextTypes>({
   isHidden: false,
   setIsHidden: (): void => {},
-  currentPage: "Dashboard",
+  currentPage: "",
   setCurrentPage: (): void => {},
 });
 

@@ -16,7 +16,7 @@ import {
   VisibilityOff as HideIcon,
   ExitToApp as SignOutIcon,
 } from "@mui/icons-material";
-import { useNavBarContext } from "../Context/navBarContext";
+import { useNavBarContext } from "../Context/NavBarContext";
 
 export default function SideNav() {
   const { isHidden, setIsHidden, currentPage, setCurrentPage } =
