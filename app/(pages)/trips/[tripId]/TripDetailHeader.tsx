@@ -14,13 +14,7 @@ export default function TripDetailHeader({
   };
 
   return (
-    <Tabs
-      value={tab}
-      onChange={handleChange}
-      textColor="primary"
-      indicatorColor="primary"
-      centered
-    >
+    <Tabs value={tab} onChange={handleChange} centered>
       <Tab value="Back" label="Back" />
       <Tab value="Info" label="Info" />
       <Tab value="Shopping" label="Shopping List" />

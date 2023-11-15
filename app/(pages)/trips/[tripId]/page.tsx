@@ -9,7 +9,6 @@ import {
   ShoppingList,
   PackingList,
 } from './index';
-import { Shop } from '@mui/icons-material';
 
 const renderTripDetail = (page: string) => {
   switch (page) {
