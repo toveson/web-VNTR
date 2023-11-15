@@ -1,5 +1,6 @@
 import { Stack, Typography, Button } from '@mui/material';
 import { Trip } from './TripsWrapper';
+import Link from 'next/link';
 
 interface TripsInterface {
   trips: Trip[];
@@ -36,7 +37,14 @@ export default function TripsView({ trips }: TripsInterface) {
             }}
             key={trip.name + trip.date}
           >
-            {trip.name} {trip.date}
+            <Link
+              style={{
+                color: '#F8EBDE',
+              }}
+              href={`/trips/${trip.id}`}
+            >
+              {trip.name} {trip.date}
+            </Link>
           </Button>
         ))}
       </Stack>
