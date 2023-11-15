@@ -1,15 +1,21 @@
-'use client';
-import { useState } from 'react';
 import { Tabs, Tab } from '@mui/material';
-export default function TripDetailHeader() {
-  const [value, setValue] = useState('Info');
 
+interface TripDetailHeaderProps {
+  tab: string;
+  setTab: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function TripDetailHeader({
+  tab,
+  setTab,
+}: TripDetailHeaderProps) {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+    setTab(newValue);
   };
+
   return (
     <Tabs
-      value={value}
+      value={tab}
       onChange={handleChange}
       textColor="primary"
       indicatorColor="primary"
