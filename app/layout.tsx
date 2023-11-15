@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import SideNav from "./components/SideNav";
 import TopBar from "./components/TopBar";
 import { NavBarContextProvider } from "./Context/navBarContext";
+import {ThemeContextProvider} from "./Context/ThemeContext"
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <ThemeContextProvider>
       <CssBaseline />
       <html lang="en">
         <body
@@ -39,6 +40,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </NavBarContextProvider>
         </body>
       </html>
-    </>
+    </ThemeContextProvider>
   );
 }
