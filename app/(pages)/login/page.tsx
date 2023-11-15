@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Card,
@@ -6,9 +8,18 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { SignUpModal } from "../../components/SignUpModal";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Login() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
       <Stack
@@ -31,7 +42,7 @@ export default function Login() {
             height: "40%",
             width: { xs: "70%", sm: "60%", md: "30%" },
             maxWidth: "300px",
-            marginBottom: {xs: "20px", sm: "0px" },
+            marginBottom: { xs: "20px", sm: "0px" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -94,7 +105,10 @@ export default function Login() {
                   direction="row"
                   style={{ justifyContent: "space-between" }}
                 >
-                  <Button style={{ backgroundColor: "#4E8448", width: "40%" }}>
+                  <Button
+                    style={{ backgroundColor: "#4E8448", width: "40%" }}
+                    onClick={handleOpen}
+                  >
                     <Typography style={{ color: "#F8EBDE" }}>
                       Sign Up
                     </Typography>
@@ -108,6 +122,12 @@ export default function Login() {
           </CardContent>
         </Card>
       </Stack>
+
+      <SignUpModal
+        open={open}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
+      />
     </Stack>
   );
 }
