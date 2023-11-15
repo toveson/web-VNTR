@@ -26,7 +26,7 @@ export default function SideNav() {
     .replace("/", "")
     .replace(/^\w/, (c) => c.toUpperCase());
 
-  const [isMini, setIsMini] = useState(false);
+  const [isMini, setIsMini] = useState(true);
 
   useEffect(() => {
     setCurrentPage(modifiedPathName);
