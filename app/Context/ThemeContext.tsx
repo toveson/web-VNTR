@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { ReactNode, FC, useContext, createContext } from "react";
@@ -22,9 +22,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const NavBarContext = createContext({
-
-});
+const NavBarContext = createContext({});
 
 export const ThemeContextProvider: FC<ThemeProviderProps> = ({ children }) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
