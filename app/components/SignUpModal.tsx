@@ -12,11 +12,10 @@ import { FC, useState } from "react";
 interface SignUpModalProps {
   open: boolean;
   handleClose: () => void;
-  handleOpen: () => void;
 }
 
 export const SignUpModal: FC<SignUpModalProps> = (props) => {
-  const { open, handleClose, handleOpen } = props;
+  const { open, handleClose } = props;
 
   return (
     <Modal

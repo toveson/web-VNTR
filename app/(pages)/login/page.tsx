@@ -123,11 +123,7 @@ export default function Login() {
         </Card>
       </Stack>
 
-      <SignUpModal
-        open={open}
-        handleClose={handleClose}
-        handleOpen={handleOpen}
-      />
+      <SignUpModal open={open} handleClose={handleClose} />
     </Stack>
   );
 }
