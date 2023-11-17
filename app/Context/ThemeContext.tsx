@@ -22,10 +22,10 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-const NavBarContext = createContext({});
+const themeContext = createContext({});
 
 export const ThemeContextProvider: FC<ThemeProviderProps> = ({ children }) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-export const useThemeContext = () => useContext(NavBarContext);
+export const useThemeContext = () => useContext(themeContext);
