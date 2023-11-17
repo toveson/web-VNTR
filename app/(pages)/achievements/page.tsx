@@ -13,39 +13,34 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const testChevos = [
   {
-    name: "First Login", 
+    title: "First Login", 
     description: "You Did It, Look at you",
     image: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
     timesAchieved: 1,
-    lastAchieved: "Sept 1, 2022",
   },
   {
-    name: "Winning The World", 
+    title: "Winning The World", 
     description: "You Did It",
     image: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
     timesAchieved: 2,
-    lastAchieved: "Sept 1, 2022",
   },
   {
-    name: "First Login", 
+    title: "First Login", 
     description: "You Did It, Look at you",
     image: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
     timesAchieved: 1,
-    lastAchieved: "Sept 1, 2022",
   },
   {
-    name: "Winning The World", 
+    title: "Winning The World", 
     description: "You Did It",
     image: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
     timesAchieved: 2,
-    lastAchieved: "Sept 1, 2022",
   },
   {
-    name: "First Login", 
+    title: "First Login", 
     description: "You Did It, Look at you",
     image: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
     timesAchieved: 1,
-    lastAchieved: "Sept 1, 2022",
   },
 ];
 
@@ -68,14 +63,14 @@ export default function Achievements() {
             >
               <CardContent sx={{ textAlign: "center" }} >
                 <Typography sx={{ color: "#F8EBDE", fontWeight: "bold" }} >
-                  {chevo.name}
+                  {chevo.title}
                 </Typography>
               </CardContent>
               <CardMedia
                 component="img"
                 height="200"
                 image={chevo.image}
-                alt={chevo.name}
+                alt={chevo.title}
                 sx={{ objectFit: "contain", borderRadius: "50%", border: "5px solid #542F12", backgroundColor: "#73C7E7", maxWidth: "200px", margin: "auto"}}
               />
               <CardActions disableSpacing sx={{ justifyContent: "space-between"}}>
