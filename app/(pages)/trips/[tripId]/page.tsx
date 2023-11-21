@@ -1,38 +1,51 @@
 'use client';
-import { useState } from 'react';
-import { Stack } from '@mui/material';
+import {useState} from 'react';
+import {Stack} from '@mui/material';
+
+import { useRouter } from 'next/navigation'
 
 import {
-  Chat,
-  TripsInfo,
-  TripDetailHeader,
-  ShoppingList,
-  PackingList,
+    Chat,
+    TripsInfo,
+    TripDetailHeader,
+    ShoppingList,
+    PackingList,
 } from './index';
 
-const renderTripDetail = (page: string) => {
-  switch (page) {
-    case 'Info':
-      return <TripsInfo />;
+const renderTripDetail = (page: string, router: any) => {
 
-    case 'Shopping':
-      return <ShoppingList />;
+    switch (page) {
+        case 'Info':
+            return <TripsInfo/>;
 
-    case 'Packing':
-      return <PackingList />;
+        case 'Shopping':
+            return <ShoppingList/>;
 
-    case 'Chat':
-      return <Chat />;
-  }
+        case 'Packing':
+            return <PackingList/>;
+
+        case 'Chat':
+            return <Chat/>;
+
+        case 'Back':
+
+            router.push('/trips');
+            return null;
+
+        default:
+            return null;
+
+    }
 };
 
 export default function TripDetailPage() {
-  const [tab, setTab] = useState<string>('Info');
+    const router = useRouter();
+    const [tab, setTab] = useState<string>('Info');
 
-  return (
-    <Stack style={{ flexGrow: 1, background: '#F8EBDE' }}>
-      <TripDetailHeader tab={tab} setTab={setTab} />
-      {renderTripDetail(tab)}
-    </Stack>
-  );
+    return (
+        <Stack style={{flexGrow: 1, background: '#F8EBDE'}}>
+            <TripDetailHeader tab={tab} setTab={setTab}/>
+            {renderTripDetail(tab, router)}
+        </Stack>
+    );
 }
