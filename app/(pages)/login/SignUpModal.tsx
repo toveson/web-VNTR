@@ -1,7 +1,12 @@
+"use client";
+
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Button,
   Card,
   CardContent,
+  IconButton,
+  InputAdornment,
   Modal,
   Stack,
   TextField,
@@ -16,6 +21,17 @@ interface SignUpModalProps {
 
 export const SignUpModal: FC<SignUpModalProps> = (props) => {
   const { open, handleClose } = props;
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword: boolean) => !prevShowPassword);
+  };
+
+  const handleCreateUser = () => {
+    console.log("create user clicked");
+    //! Logic to add user to database and redirect to /dashboard goes here
+  };
 
   return (
     <Modal
@@ -51,13 +67,32 @@ export const SignUpModal: FC<SignUpModalProps> = (props) => {
               style={{ backgroundColor: "#F8EBDE", borderRadius: "5px" }}
             />
             <TextField
-              label="Password"
+              label="username"
               variant="outlined"
               style={{ backgroundColor: "#F8EBDE", borderRadius: "5px" }}
             />
+            <TextField
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              variant="outlined"
+              style={{ backgroundColor: "#F8EBDE", borderRadius: "5px" }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={handleTogglePasswordVisibility}>
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
 
             <Stack direction="row" style={{ justifyContent: "center" }}>
-              <Button style={{ backgroundColor: "#4E8448" }} fullWidth={true}>
+              <Button
+                style={{ backgroundColor: "#4E8448" }}
+                fullWidth={true}
+                onClick={handleCreateUser}
+              >
                 <Typography style={{ color: "#F8EBDE" }}>
                   Create User
                 </Typography>
