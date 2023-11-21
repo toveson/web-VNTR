@@ -7,7 +7,7 @@ export default function Dashboard() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>error.message</div>;
-  console.log(user);
+
   return (
     user && (
       <Stack style={{ backgroundColor: '#F8EBDE', flexGrow: 1 }}>
