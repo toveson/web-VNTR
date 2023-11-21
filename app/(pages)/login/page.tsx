@@ -8,8 +8,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { SignUpModal } from "../../components/SignUpModal";
-import Link from "next/link";
+import { SignUpModal } from "./SignUpModal";
 import { useState } from "react";
 
 export default function Login() {
@@ -82,10 +81,26 @@ export default function Login() {
                     Google login
                   </Typography>
                 </Button>
-                <Stack style={{ alignItems: "center" }}>
-                  <Typography style={{ color: "#F8EBDE" }}>
-                    ------ OR ------
-                  </Typography>
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  style={{ alignItems: "center", justifyContent: "center" }}
+                >
+                  <Stack
+                    style={{
+                      backgroundColor: "#73C7E7",
+                      height: "3px",
+                      width: "75px",
+                    }}
+                  ></Stack>
+                  <Typography style={{ color: "#73C7E7" }}>OR</Typography>
+                  <Stack
+                    style={{
+                      backgroundColor: "#73C7E7",
+                      height: "3px",
+                      width: "75px",
+                    }}
+                  ></Stack>
                 </Stack>
               </Stack>
 
