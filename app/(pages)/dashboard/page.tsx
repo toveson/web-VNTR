@@ -40,7 +40,7 @@ export default function Dashboard() {
                   variant="h3"
                   style={{ color: "#F8EBDE", textAlign: "center" }}
                 >
-                  username
+                  {user.name}
                 </Typography>
               </CardContent>
             </Card>
