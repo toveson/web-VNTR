@@ -9,7 +9,7 @@ export default function FriendRequests(props: FriendRequestsProps) {
   const { friendData } = props;
 
   const handleFriendRequest = (key: any) => {
-    console.log(`Request Clicked ${key}`);
+    console.log(`Request Approved Clicked ${key}`);
   };
 
   return (

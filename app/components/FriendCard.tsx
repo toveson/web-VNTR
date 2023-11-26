@@ -24,7 +24,7 @@ export default function FriendCard(props: FriendCardProps) {
             alt="User Image"
             src={friendData.img}
             sx={{
-              border: "10px solid #73C7E7",
+              border: "6px solid #73C7E7",
               width: 200,
               height: 200,
               backgroundColor: "#F8EBDE",
