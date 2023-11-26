@@ -17,50 +17,34 @@ export default function Friends(): JSX.Element {
     {
       name: "Jacek",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "CJ",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "Name Here",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "Jacek",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "CJ",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "Name Here",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "Jacek",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
     {
       name: "CJ",
       img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
-      isFriend: true,
-      requestSend: false,
     },
   ];
 
