@@ -1,29 +1,26 @@
 import { Stack } from "@mui/material";
 import FriendCard from "../../components/FriendCard";
 
-export default function MyFriends() {
-  const friendData = [
-    {
-      name: "Jacek",
-      isFriend: true,
-      requestSend: false,
-    },
-    {
-      name: "CJ",
-      isFriend: true,
-      requestSend: false,
-    },
-    {
-      name: "Name Here",
-      isFriend: true,
-      requestSend: false,
-    },
-  ];
+interface MyFriendsProps {
+  friendData: any;
+}
+
+export default function MyFriends(props: MyFriendsProps) {
+  const { friendData } = props;
+
 
   return (
     <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
-      <Stack spacing={2} direction="row">
-        {friendData.map((friend, key) => {
+      <Stack
+        direction="row"
+        style={{
+          flexWrap: "wrap",
+          justifyContent: "center",
+          width: "70%",
+          margin: "0 auto",
+        }}
+      >
+        {friendData.map((friend: MyFriendsProps, key: any) => {
           return <FriendCard key={key} friendData={friend} />;
         })}
       </Stack>

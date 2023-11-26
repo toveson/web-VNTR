@@ -13,6 +13,57 @@ export default function Friends(): JSX.Element {
     setTab(newTab);
   };
 
+  const friendData = [
+    {
+      name: "Jacek",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "CJ",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "Name Here",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "Jacek",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "CJ",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "Name Here",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "Jacek",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+    {
+      name: "CJ",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      isFriend: true,
+      requestSend: false,
+    },
+  ];
+
   return (
     <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
       <Stack spacing={2}>
@@ -44,9 +95,11 @@ export default function Friends(): JSX.Element {
             alignItems: "center",
           }}
         >
-          {tab === "MyFriends" && <MyFriends />}
-          {tab === "FriendRequest" && <FriendRequests />}
-          {tab === "NewFriend" && <AddFriend />}
+          {tab === "MyFriends" && <MyFriends friendData={friendData} />}
+          {tab === "FriendRequest" && (
+            <FriendRequests friendData={friendData} />
+          )}
+          {tab === "NewFriend" && <AddFriend friendData={friendData} />}
         </Stack>
       </Stack>
     </Stack>
