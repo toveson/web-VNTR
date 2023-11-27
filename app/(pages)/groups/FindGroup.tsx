@@ -1,9 +1,36 @@
 import { Stack } from "@mui/material";
+import GroupCard from "@/app/components/GroupCard";
 
-export default function FindGroup() {
+interface FindGroupProps {
+  groupData: any;
+}
+
+export default function FindGroup(props: FindGroupProps) {
+  const { groupData } = props;
+
+  const handleGroupRequest = (key: any) => {
+    console.log(`Group Request Clicked! ${key}`);
+  };
+
   return (
-    <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
-      Hello From Find Group
+    <Stack
+      direction="row"
+      style={{
+        flexWrap: "wrap",
+        justifyContent: "center",
+        margin: "0 auto",
+      }}
+    >
+      {groupData.map((group: FindGroupProps, key: number) => {
+        return (
+          <GroupCard
+            key={key}
+            buttonText="join group"
+            groupData={group}
+            handleButtonClick={() => handleGroupRequest(key)}
+          />
+        );
+      })}
     </Stack>
   );
 }

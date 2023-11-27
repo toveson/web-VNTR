@@ -68,7 +68,7 @@ export default function Friends(): JSX.Element {
           }}
         >
           {tab === "MyGroups" && <MyGroups groupData={groupData} />}
-          {tab === "FindGroup" && <FindGroup />}
+          {tab === "FindGroup" && <FindGroup groupData={groupData} />}
           {tab === "AddGroup" && <AddGroup />}
         </Stack>
       </Stack>
