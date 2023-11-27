@@ -13,6 +13,29 @@ export default function Friends(): JSX.Element {
     setTab(newTab);
   };
 
+  const groupData = [
+    {
+      name: "Amazing Group One",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eos adipisci tempore atque deleniti illum molestiae inventore rerum unde, reprehenderit debitis! Ut, officia dolor? Repellat adipisci exercitationem est incidunt accusantium?",
+    },
+    {
+      name: "Amazing Group Two",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eos adipisci tempore atque deleniti illum molestiae inventore rerum unde, reprehenderit debitis! Ut, officia dolor? Repellat adipisci exercitationem est incidunt accusantium?",
+    },
+    {
+      name: "Amazing Group Three",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eos adipisci tempore atque deleniti illum molestiae inventore rerum unde, reprehenderit debitis! Ut, officia dolor? Repellat adipisci exercitationem est incidunt accusantium?",
+    },
+    {
+      name: "Amazing Group Four",
+      img: "https://cdn2.iconfinder.com/data/icons/people-79/100/Goal-04-512.png",
+      info: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eos adipisci tempore atque deleniti illum molestiae inventore rerum unde, reprehenderit debitis! Ut, officia dolor? Repellat adipisci exercitationem est incidunt accusantium?",
+    },
+  ];
+
   return (
     <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
       <Stack spacing={2}>
@@ -44,7 +67,7 @@ export default function Friends(): JSX.Element {
             alignItems: "center",
           }}
         >
-          {tab === "MyGroups" && <MyGroups /> }
+          {tab === "MyGroups" && <MyGroups groupData={groupData} />}
           {tab === "FindGroup" && <FindGroup />}
           {tab === "AddGroup" && <AddGroup />}
         </Stack>

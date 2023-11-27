@@ -1,9 +1,36 @@
 import { Stack } from "@mui/material";
+import GroupCard from "@/app/components/GroupCard";
 
-export default function MyGroups() {
+interface MyGroupProps {
+  groupData: any;
+}
+
+export default function MyGroups(props: MyGroupProps) {
+  const { groupData } = props;
+
+  const handleViewGroup = (key: any) => {
+    console.log(`View Group Clicked! ${key}`);
+  };
+
   return (
-    <Stack style={{ backgroundColor: "#F8EBDE", flexGrow: 1 }}>
-      Hello From My Groups
+    <Stack
+      direction="row"
+      style={{
+        flexWrap: "wrap",
+        justifyContent: "center",
+        margin: "0 auto",
+      }}
+    >
+      {groupData.map((group: MyGroupProps, key: number) => {
+        return (
+          <GroupCard
+            key={key}
+            buttonText="view group"
+            groupData={group}
+            handleButtonClick={() => handleViewGroup(key)}
+          />
+        );
+      })}
     </Stack>
   );
 }
